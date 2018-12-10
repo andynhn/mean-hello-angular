@@ -1,3 +1,30 @@
+.header {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    border: 4px solid black;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 900px;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+.row {
+    display: inline;
+    margin: 10px;
+}
+.createTaskForm {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+}
 button.getAllTasks {
     background-color: black;
     color: white;
@@ -8,13 +35,40 @@ button.getAllTasks {
     border-radius: 10px;
 }
 #allTasks {
-    border: 4px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+    background-color: white;
     border-radius: 10px;
-    padding: 5px;
-    margin-bottom: 10px;
 }
 button.getThisTask {
     background-color: teal;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 9px;
+    cursor: pointer;
+    border-radius: 75px;
+}
+button.deleteThisTask {
+    background-color: darkred;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 9px;
+    cursor: pointer;
+    border-radius: 75px;
+}
+button.updateThisTask {
+    background-color: orange;
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 75px;
+}
+button.hideThisTask {
+    background-color: navy;
     color: white;
     width: 50px;
     height: 50px;
@@ -23,8 +77,11 @@ button.getThisTask {
     border-radius: 75px;
 }
 #thisTask {
-    border: 4px solid orangered;
+    padding: 10px;
+    background-color: white;
     border-radius: 10px;
+    width: 300px;
+    margin-top: 10px;
 }
 h3.task {
     display: flex;
@@ -32,4 +89,14 @@ h3.task {
     vertical-align: top;
     line-height: 50px;
     min-width: 400px;
+}
+.submitTask {
+    cursor: pointer;
+    background-color: orange;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius:10px;
+    margin-top: 5px;
 }
