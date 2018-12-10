@@ -8,22 +8,24 @@ export class HttpService {
 
   constructor(private _http: HttpClient) { 
     this.getTasks();
-    this.getTask();
+    // this.getTask();
   }
 
   getTasks(){
     // our http response is an Observable, store it in a variable
-    let allTasks = this._http.get('/tasks');
-    allTasks.subscribe(data => 
-      console.log("Got our tasks!", data));
-  }
-  getTask(){
-    // hardcoding the task id for this assignment...will update it in future assignments
-    let theTask = this._http.get(`/tasks/5c082e3a09e82ae291ade961`);
-    theTask.subscribe(data => 
-      console.log("Got the task!", data));
-  }
+    // let allTasks = this._http.get('/tasks');
+    // allTasks.subscribe(data => {
+    //   console.log("Got our tasks!", data);
+    // });
 
-
+    // instead of storing the Observable in a variable, return the observable to wherever the getTasks method was invoked
+    return this._http.get('/tasks');
+  }
+  // getTask(){
+  //   let theTask = this._http.get(`/tasks/5c082e3a09e82ae291ade961`);
+  //   theTask.subscribe(data => {
+  //     console.log("Got the task!", data)
+  //   });
+  // }
 
 }

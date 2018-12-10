@@ -7,6 +7,25 @@ import { HttpService } from './http.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MEAN';
-  constructor(private _httpService: HttpService) {}
+  title = 'Restful Tasks API';
+  subtitle = 'All the tasks';
+  //set the attribute tasks to be an array
+  tasks = [];
+  thirdTask = [];
+  constructor(private _httpService: HttpService) {
+
+  }
+  ngOnInit(){
+    this.getTasksFromService();
+  }
+  getTasksFromService(){
+    let observable = this._httpService.getTasks();
+    observable.subscribe(data => {
+      console.log("Got our data!", data)
+      // here, the array of tasks is assigned to the key "tasks" in the data object.
+      this.tasks = data['tasks']
+      this.thirdTask = data['tasks'][2]
+      console.log(this.tasks)
+    })
+  }
 }
