@@ -1,0 +1,35 @@
+button.getAllTasks {
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#allTasks {
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+button.getThisTask {
+    background-color: teal;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 75px;
+}
+#thisTask {
+    border: 4px solid orangered;
+    border-radius: 10px;
+}
+h3.task {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: top;
+    line-height: 50px;
+    min-width: 400px;
+}

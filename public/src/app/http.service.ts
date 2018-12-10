@@ -21,11 +21,12 @@ export class HttpService {
     // instead of storing the Observable in a variable, return the observable to wherever the getTasks method was invoked
     return this._http.get('/tasks');
   }
-  // getTask(){
-  //   let theTask = this._http.get(`/tasks/5c082e3a09e82ae291ade961`);
-  //   theTask.subscribe(data => {
-  //     console.log("Got the task!", data)
-  //   });
-  // }
+  getTask(id){
+    // let theTask = this._http.get(`/tasks/5c082e3a09e82ae291ade961`);
+    // theTask.subscribe(data => {
+    //   console.log("Got the task!", data)
+    // });
+    return this._http.get(`/tasks/${id}`)
+  }
 
 }
