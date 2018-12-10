@@ -62,8 +62,9 @@
 
   <!-- DISPLAY ALL TASKS -->
   <div id="allTasks">
-    <!-- <button (click)="getTasksFromService()" class="getAllTasks">Get All Tasks</button>
-    <div *ngIf="displayAllTasks"> -->
+    <span *ngIf="displayAllTasks == false"><button (click)="getTasksFromService()" class="getAllTasks">Get All Tasks</button></span>
+    <span *ngIf="displayAllTasks == true"><button (click)="toggleHideButton()" class="toggleHideButton">Hide All Tasks</button></span>
+    <div *ngIf="displayAllTasks == true">
       <div style="display: inline-block; text-align: left;">
           <h3 class="task" *ngFor="let task of tasks">{{ task['title'] }}<span><button (click)="getThisTaskFromService(task['_id'])" class="getThisTask">SHOW</button><button (click)="deleteTaskFromService(task['_id'])" class="deleteThisTask">DELETE</button></span></h3>
       </div>

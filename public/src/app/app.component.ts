@@ -11,7 +11,7 @@ export class AppComponent {
   author = 'Andy Nguyen';
   //set the attribute tasks to be an array
   tasks = [];
-  // displayAllTasks: boolean;
+  displayAllTasks: boolean = false;
   selectedTask = [];
   displayOneTask: boolean = false;
   newTask: any;
@@ -20,7 +20,7 @@ export class AppComponent {
 
   }
   ngOnInit(){
-    this.getTasksFromService();
+    // this.getTasksFromService();
     this.newTask = {title: "", description: ""};
   }
   createTaskFromService(){
@@ -47,7 +47,7 @@ export class AppComponent {
       console.log("Got our data!", data)
       // here, the array of tasks is assigned to the key "tasks" in the data object.
       this.tasks = data['tasks']
-      // this.displayAllTasks = true;
+      this.displayAllTasks = true;
       this.canEdit = false;
     })
   }
@@ -82,6 +82,11 @@ export class AppComponent {
   }
   hideTask(){
     console.log(`hideTask`);
+    this.displayOneTask = false;
+  }
+  toggleHideButton(){
+    console.log(`toggleHideButton`);
+    this.displayAllTasks = false;
     this.displayOneTask = false;
   }
 
