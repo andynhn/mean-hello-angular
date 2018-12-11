@@ -78,7 +78,7 @@
     <!-- TASKS DISPLAYED HERE AFTER CLICK -->
     <div *ngIf="displayAllTasks == true">
       <div style="display: inline-block; text-align: left;">
-          <h3 class="task" *ngFor="let task of tasks">{{ task['title'] }}<span><button (click)="getThisTaskFromService(task['_id'])" class="getThisTask">SHOW</button><button (click)="deleteTaskFromService(task['_id'])" class="deleteThisTask">DELETE</button></span></h3>
+          <h4 class="task" *ngFor="let task of tasks">• {{ task['title'] }}<span><button (click)="getThisTaskFromService(task['_id'])" class="getThisTask">SHOW</button><button (click)="deleteTaskFromService(task['_id'])" class="deleteThisTask">DELETE</button></span></h4>
       </div>
     <!-- </div> -->
   </div>

@@ -1,19 +1,10 @@
 button.updateThisTask {
     background-color: orange;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 25px;
     font-size: 10px;
     cursor: pointer;
-    border-radius: 75px;
-}
-button.hideThisTask {
-    background-color: navy;
-    color: white;
-    width: 50px;
-    height: 50px;
-    font-size: 10px;
-    cursor: pointer;
-    border-radius: 75px;
+    border-radius: 5px;
 }
 #thisTask {
     padding: 10px;

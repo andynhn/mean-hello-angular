@@ -14,6 +14,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 5px;
+    max-height: 800px;
 }
 .row {
     display: inline;
@@ -52,24 +53,27 @@ button.toggleHideButton {
     background-color: white;
     border-radius: 10px;
     min-width: 500px;
+    overflow: auto;
 }
 button.getThisTask {
     background-color: teal;
     color: white;
     width: 50px;
-    height: 50px;
+    height: 25px;
     font-size: 9px;
     cursor: pointer;
-    border-radius: 75px;
+    border-radius: 5px;
+    vertical-align: center;
 }
 button.deleteThisTask {
     background-color: darkred;
     color: white;
     width: 50px;
-    height: 50px;
+    height: 25px;
     font-size: 9px;
     cursor: pointer;
-    border-radius: 75px;
+    border-radius: 5px;
+    vertical-align: center;
 }
 /* button.updateThisTask {
     background-color: orange;
@@ -95,12 +99,16 @@ button.hideThisTask {
     width: 300px;
     margin-top: 10px;
 } */
-h3.task {
+h4.task {
     display: flex;
     justify-content: space-between;
-    vertical-align: top;
-    line-height: 50px;
-    min-width: 400px;
+    vertical-align: center;
+    line-height: 25px;
+    width: 500px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .submitTask {
     cursor: pointer;
