@@ -61,29 +61,31 @@ export class AppComponent {
       this.canEdit = false;
     })
   }
-  showTaskEditor(id: string){
-    console.log(`showTaskEditor`);
-    let observable = this._httpService.getTask(id);
-    observable.subscribe(data => {
-      console.log(`showTaskEditor`, data)
-      this.selectedTask = data['task']
-      this.canEdit = true;
-    });
-  }
-  updateTaskFromService(id: string, selectedTask) {
-    console.log("made it to updateTasksFromService")
-    console.log(id,selectedTask);
-    let observable = this._httpService.updateTask(id, selectedTask);
-    observable.subscribe(data => {
-      console.log("Got the data back", data);
-      this.canEdit = false;
-      this.getTasksFromService();
-    })
-  }
-  hideTask(){
-    console.log(`hideTask`);
-    this.displayOneTask = false;
-  }
+
+  // These are now in the nested task app component
+  // showTaskEditor(id: string){
+  //   console.log(`showTaskEditor`);
+  //   let observable = this._httpService.getTask(id);
+  //   observable.subscribe(data => {
+  //     console.log(`showTaskEditor`, data)
+  //     this.selectedTask = data['task']
+  //     this.canEdit = true;
+  //   });
+  // }
+  // updateTaskFromService(id: string, selectedTask) {
+  //   console.log("made it to updateTasksFromService")
+  //   console.log(id,selectedTask);
+  //   let observable = this._httpService.updateTask(id, selectedTask);
+  //   observable.subscribe(data => {
+  //     console.log("Got the data back", data);
+  //     this.canEdit = false;
+  //     this.getTasksFromService();
+  //   })
+  // }
+  // hideTask(){
+  //   console.log(`hideTask`);
+  //   this.displayOneTask = false;
+  // }
   toggleHideButton(){
     console.log(`toggleHideButton`);
     this.displayAllTasks = false;

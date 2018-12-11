@@ -71,7 +71,7 @@ button.deleteThisTask {
     cursor: pointer;
     border-radius: 75px;
 }
-button.updateThisTask {
+/* button.updateThisTask {
     background-color: orange;
     width: 50px;
     height: 50px;
@@ -94,7 +94,7 @@ button.hideThisTask {
     border-radius: 10px;
     width: 300px;
     margin-top: 10px;
-}
+} */
 h3.task {
     display: flex;
     justify-content: space-between;

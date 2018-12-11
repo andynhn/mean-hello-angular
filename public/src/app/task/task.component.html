@@ -1,0 +1,30 @@
+<!-- SHOW A TASK -->
+<!-- <div *ngIf="displayOneTask == true"> -->
+<div>
+  <div id="thisTask">
+    <h2>{{ taskToShow['title'] }}</h2>
+    <p>{{ taskToShow['description'] }}</p>
+    
+    <!-- UPDATE A TASK -->
+    <p><button (click)="showTaskEditor(taskToShow['_id'])" class="updateThisTask">EDIT TASK</button></p>
+    <div *ngIf="canEdit == true">
+        <form (submit)="updateTaskFromService(taskToShow['_id'], taskToShow)">
+          <!-- <p>{{ selectedTask | json }}</p>
+          <p>{{ updatedTask | json }}</p> -->
+          <div style="display: inline-block; text-align: left;">
+              <div>
+                Title:<br>
+                <input type="text" size="35" name="taskToShow.title" [(ngModel)]="taskToShow.title" />
+              </div>
+              <div>
+                Description:<br>
+                <input type="text" size="35" name="taskToShow.description" [(ngModel)]="taskToShow.description" />
+              </div>
+          </div>
+          <div>
+            <input type="submit" value="Update Task" class="submitTask" />
+          </div>
+        </form>
+    </div>
+  </div>
+</div>

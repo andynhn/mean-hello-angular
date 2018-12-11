@@ -3,6 +3,7 @@
   <h1 class="header">{{ title }}</h1>
   <h5 class="header">By {{ author }}</h5>
 </div>
+
 <div class="container" style="text-align:center">
 
   <div class="row">
@@ -27,48 +28,62 @@
         </form>
     </div>
 
-    <!-- SHOW A TASK -->
-    <div *ngIf="displayOneTask == true">
-      <div id="thisTask">
-        <h2>{{ selectedTask['title'] }}</h2>
-        <p>{{ selectedTask['description'] }}</p>
 
-        <!-- UPDATE A TASK -->
-        <p><button (click)="showTaskEditor(selectedTask['_id'])" class="updateThisTask">EDIT TASK</button><button (click)="hideTask()" class="hideThisTask">HIDE TASK</button></p>
-        <div *ngIf="canEdit == true">
-            <form (submit)="updateTaskFromService(selectedTask['_id'], selectedTask)">
-              <!-- <p>{{ selectedTask | json }}</p>
-              <p>{{ updatedTask | json }}</p> -->
-              <div style="display: inline-block; text-align: left;">
-                  <div>
-                    Title:<br>
-                    <input type="text" size="35" name="selectedTask.title" [(ngModel)]="selectedTask.title" />
-                  </div>
-                  <div>
-                    Description:<br>
-                    <input type="text" size="35" name="selectedTask.description" [(ngModel)]="selectedTask.description" />
-                  </div>
-              </div>
-              <div>
-                <input type="submit" value="Update Task" class="submitTask" />
-              </div>
-            </form>
+    <app-task *ngIf="displayOneTask == true" [taskToShow]="selectedTask" [canEdit]="canEdit" (getTasksFromParent)="getTasksFromService()"></app-task>
+
+
+    <!-- THIS SECTION IS NOW NESTED IN THE TASK APP COMPONENT -->
+      <!-- SHOW A TASK -->
+      <!-- <div *ngIf="displayOneTask == true">
+        <div id="thisTask">
+          <h2>{{ selectedTask['title'] }}</h2>
+          <p>{{ selectedTask['description'] }}</p> -->
+          
+          <!-- UPDATE A TASK -->
+          <!-- <p><button (click)="showTaskEditor(selectedTask['_id'])" class="updateThisTask">EDIT TASK</button><button (click)="hideTask()" class="hideThisTask">HIDE TASK</button></p>
+          <div *ngIf="canEdit == true">
+              <form (submit)="updateTaskFromService(selectedTask['_id'], selectedTask)"> -->
+                <!-- <p>{{ selectedTask | json }}</p>
+                <p>{{ updatedTask | json }}</p> -->
+                <!-- <div style="display: inline-block; text-align: left;">
+                    <div>
+                      Title:<br>
+                      <input type="text" size="35" name="selectedTask.title" [(ngModel)]="selectedTask.title" />
+                    </div>
+                    <div>
+                      Description:<br>
+                      <input type="text" size="35" name="selectedTask.description" [(ngModel)]="selectedTask.description" />
+                    </div>
+                </div>
+                <div>
+                  <input type="submit" value="Update Task" class="submitTask" />
+                </div>
+              </form>
+          </div>
         </div>
-      </div>
-    </div>
+      </div> -->
+
+
+
 
   </div>
+
 
 
   <!-- DISPLAY ALL TASKS -->
   <div id="allTasks">
     <span *ngIf="displayAllTasks == false"><button (click)="getTasksFromService()" class="getAllTasks">Get All Tasks</button></span>
     <span *ngIf="displayAllTasks == true"><button (click)="toggleHideButton()" class="toggleHideButton">Hide All Tasks</button></span>
+
+    <!-- TASKS DISPLAYED HERE AFTER CLICK -->
     <div *ngIf="displayAllTasks == true">
       <div style="display: inline-block; text-align: left;">
           <h3 class="task" *ngFor="let task of tasks">{{ task['title'] }}<span><button (click)="getThisTaskFromService(task['_id'])" class="getThisTask">SHOW</button><button (click)="deleteTaskFromService(task['_id'])" class="deleteThisTask">DELETE</button></span></h3>
       </div>
     <!-- </div> -->
   </div>
+
+
+
 </div>
 <router-outlet></router-outlet>

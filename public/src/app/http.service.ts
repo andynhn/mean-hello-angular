@@ -8,7 +8,6 @@ export class HttpService {
 
   constructor(private _http: HttpClient) { 
     this.getTasks();
-    // this.getTask();
   }
 
   getTasks(){
